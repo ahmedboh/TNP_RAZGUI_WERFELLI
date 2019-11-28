@@ -11,6 +11,7 @@ import { AuthentfierComponent } from './mon_projet/authentfier/authentfier.compo
 import { MenuComponent } from './mon_projet/menu/menu.component';
 import { EuroPipe } from './mon_projet/euro.pipe';
 import { ErreurComponent } from './mon_projet/erreur/erreur.component';
+import { SinscrireComponent } from './mon_projet/sinscrire/sinscrire.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ErreurComponent } from './mon_projet/erreur/erreur.component';
     AuthentfierComponent,
     MenuComponent,
     EuroPipe,
-    ErreurComponent
+    ErreurComponent,
+    SinscrireComponent
   ],
   imports: [
     BrowserModule,

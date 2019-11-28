@@ -1,27 +1,19 @@
 <div style="background:url('../assets/back2.jpg')no-repeat ;background-size:100%;height:700px;">
-<div class="container" style="opacity: 0.8;">
-    <br><br><br>
-    <h2 class="text-center">S'inscrire</h2>
-    <form #formulaire="ngForm" (ngSubmit)="onSinscrie(formulaire)" >
-        <input name="nom" [(ngModel)]="nom" #name="ngModel" type="text" class="form-control" placeholder="Votre nom" required pattern="[A-Z][a-zA-Z]+" ><br>
-        <div class="alert alert-danger" *ngIf="name.errors?.required && name.touched"> La saisir du nom est obligatoire </div>
-        <div class="alert alert-danger" *ngIf="name.errors?.pattern && name.touched"> Il faut que le 1er lettre du nom en majuscules </div>
+    <br><br><br>   <br><br><br>
+<div class="container" style="opacity: 0.7;border:3px solid #0058fc;background-color: gray;border-radius: 30px;">
+        <h1 class="text-center">S'identifier</h1><br><br>
+    <form #formulaire="ngForm" (ngSubmit)="onSinscrire(formulaire)" >
 
-        <input name="prenom" [(ngModel)]="prenom" #firstName="ngModel" type="text" class="form-control" placeholder="Votre prenom"required pattern="[A-Z][a-zA-Z]+"><br>
-        <div class="alert alert-danger" *ngIf="firstName.errors?.required && firstName.touched"> La saisir du prenom est obligatoire </div>
-        <div class="alert alert-danger" *ngIf="firstName.errors?.pattern && firstName.touched"> Il faut que le 1er lettre du prenom en majuscules </div>
-
-        <input name="email" [(ngModel)]="email" #mail="ngModel" type="email" class="form-control" placeholder="votre Email"required email ><br>
-        <div class="alert alert-danger" *ngIf="mail.errors?.required && mail.touched"> La saisir du email est obligatoire </div>
-        <div class="alert alert-danger" *ngIf="mail.errors?.email && mail.touched"> </div>
-
-        <input name="mtp" [(ngModel)]="mtp"  type="password" class="form-control" placeholder="votre mot de passe"required minlength="8"><br>
-
-        <input name="cmtp" [(ngModel)]="cmtp" type="password" class="form-control" placeholder="confirmer votre mot de passe"required><br>
-        
-        <input name="adresse" [(ngModel)]="adresse" type="text" class="form-control" placeholder="Votre Adresse"required><br>
-        
-        <button class="btn btn-primary">Créer un compte</button>
+        <input name="email" [(ngModel)]="email" #mail="ngModel" type="email" class="form-control" placeholder="votre Email"required email >   
+        <div class="alert alert-danger" *ngIf="mail.errors?.required && mail.touched"> La saisie du email est obligatoire </div>
+        <div class="alert alert-danger" *ngIf="mail.errors?.email && mail.touched">Incorrect format "exmp@xx.xxx" </div>
+        <br><br>
+        <input name="mtp" [(ngModel)]="mtp" #motpass="ngModel" type="password" class="form-control" placeholder="votre mot de passe"required minlength="8">
+        <div class="alert alert-danger" *ngIf="motpass.errors?.required && motpass.touched"> La saisie du mot de passe est obligatoire </div>
+        <div class="alert alert-danger" *ngIf="motpass.errors?.minlength && motpass.touched">il faut que le mot passe superieure de 8 caractéres </div><br>
+         <div [hidden]=errors class="alert alert-danger" > {{message}} </div>
+        <button class="btn btn-primary" >Valider</button> 
+        <button class="btn btn-success " [routerLink]="['/Sinscrire']" style="position: absolute; right:130px; ">S'incrire</button>   <br><br>
     </form>
 </div>
 </div>
