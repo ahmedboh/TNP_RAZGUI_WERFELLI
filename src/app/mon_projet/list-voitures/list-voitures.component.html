@@ -1,0 +1,15 @@
+
+<body style="color: yellow;">
+    <br><br><br>
+    <h1 style="text-align: center;">{{titre|uppercase}}</h1>
+    <br>
+    
+    <ul class="list-group"    style="position: absolute;left:100px;">
+        <li class="list-group-item" style="background-color:#002233;"*ngFor="let t of tabvoitures ; let i=index">
+    
+            <app-voiture [pos]="i"></app-voiture>
+        </li>
+    
+    
+    </ul>
+</body>

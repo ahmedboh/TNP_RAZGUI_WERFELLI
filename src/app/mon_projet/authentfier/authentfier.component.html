@@ -1,0 +1,27 @@
+<div style="background:url('../assets/back2.jpg')no-repeat ;background-size:100%;height:700px;">
+<div class="container" style="opacity: 0.8;">
+    <br><br><br>
+    <h2 class="text-center">S'inscrire</h2>
+    <form #formulaire="ngForm" (ngSubmit)="onSinscrie(formulaire)" >
+        <input name="nom" [(ngModel)]="nom" #name="ngModel" type="text" class="form-control" placeholder="Votre nom" required pattern="[A-Z][a-zA-Z]+" ><br>
+        <div class="alert alert-danger" *ngIf="name.errors?.required && name.touched"> La saisir du nom est obligatoire </div>
+        <div class="alert alert-danger" *ngIf="name.errors?.pattern && name.touched"> Il faut que le 1er lettre du nom en majuscules </div>
+
+        <input name="prenom" [(ngModel)]="prenom" #firstName="ngModel" type="text" class="form-control" placeholder="Votre prenom"required pattern="[A-Z][a-zA-Z]+"><br>
+        <div class="alert alert-danger" *ngIf="firstName.errors?.required && firstName.touched"> La saisir du prenom est obligatoire </div>
+        <div class="alert alert-danger" *ngIf="firstName.errors?.pattern && firstName.touched"> Il faut que le 1er lettre du prenom en majuscules </div>
+
+        <input name="email" [(ngModel)]="email" #mail="ngModel" type="email" class="form-control" placeholder="votre Email"required email ><br>
+        <div class="alert alert-danger" *ngIf="mail.errors?.required && mail.touched"> La saisir du email est obligatoire </div>
+        <div class="alert alert-danger" *ngIf="mail.errors?.email && mail.touched"> </div>
+
+        <input name="mtp" [(ngModel)]="mtp"  type="password" class="form-control" placeholder="votre mot de passe"required minlength="8"><br>
+
+        <input name="cmtp" [(ngModel)]="cmtp" type="password" class="form-control" placeholder="confirmer votre mot de passe"required><br>
+        
+        <input name="adresse" [(ngModel)]="adresse" type="text" class="form-control" placeholder="Votre Adresse"required><br>
+        
+        <button class="btn btn-primary">Créer un compte</button>
+    </form>
+</div>
+</div>
