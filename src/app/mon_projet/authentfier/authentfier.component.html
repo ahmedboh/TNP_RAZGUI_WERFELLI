@@ -2,18 +2,19 @@
     <br><br><br>   <br><br><br>
 <div class="container" style="opacity: 0.7;border:3px solid #0058fc;background-color: gray;border-radius: 30px;">
         <h1 class="text-center">S'identifier</h1><br><br>
-    <form #formulaire="ngForm" (ngSubmit)="onSinscrire(formulaire)" >
+    <form #formulaire="ngForm" (ngSubmit)="onSeConnecter(formulaire)" >
 
-        <input name="email" [(ngModel)]="email" #mail="ngModel" type="email" class="form-control" placeholder="votre Email"required email >   
-        <div class="alert alert-danger" *ngIf="mail.errors?.required && mail.touched"> La saisie du email est obligatoire </div>
-        <div class="alert alert-danger" *ngIf="mail.errors?.email && mail.touched">Incorrect format "exmp@xx.xxx" </div>
+        <input name="email" (click)="hide()"[(ngModel)]="email" #mail="ngModel" type="email" class="form-control" placeholder="votre Email"required email >   
+        <div class="alert alert-danger" [hidden]="hiden" *ngIf="mail.errors?.required && mail.touched"> La saisie du email est obligatoire </div>
+        <div class="alert alert-danger" [hidden]="hiden" *ngIf="mail.errors?.email && mail.touched">Incorrect format "exmp@xx.xxx" </div>
         <br><br>
-        <input name="mtp" [(ngModel)]="mtp" #motpass="ngModel" type="password" class="form-control" placeholder="votre mot de passe"required minlength="8">
-        <div class="alert alert-danger" *ngIf="motpass.errors?.required && motpass.touched"> La saisie du mot de passe est obligatoire </div>
-        <div class="alert alert-danger" *ngIf="motpass.errors?.minlength && motpass.touched">il faut que le mot passe superieure de 8 caractéres </div><br>
-         <div [hidden]=errors class="alert alert-danger" > {{message}} </div>
-        <button class="btn btn-primary" >Valider</button> 
-        <button class="btn btn-success " [routerLink]="['/Sinscrire']" style="position: absolute; right:130px; ">S'incrire</button>   <br><br>
+        <input name="mtp" (click)="hide()" [(ngModel)]="mtp" #motpass="ngModel" type="password" class="form-control" placeholder="votre mot de passe"required minlength="8">
+        <div class="alert alert-danger" [hidden]="hiden" *ngIf="motpass.errors?.required && motpass.touched"> La saisie du mot de passe est obligatoire </div>
+        <div class="alert alert-danger" [hidden]="hiden" *ngIf="motpass.errors?.minlength && motpass.touched">il faut que le mot passe superieure de 8 caractéres </div><br>
+
+         <div [hidden]="hiden" *ngIf="message" class="alert alert-danger" [hidden]=""> {{message}} </div>
+        <button class="btn btn-primary" ><span class="spinner-grow spinner-grow-sm"></span>Connecter</button> 
+        <button class="btn btn-success " [routerLink]="['/Sinscrire']" style="position: absolute; right:130px; "><span class="spinner-grow spinner-grow-sm"></span>S'incrire</button>   <br><br>
     </form>
 </div>
 </div>

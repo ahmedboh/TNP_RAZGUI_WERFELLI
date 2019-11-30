@@ -10,14 +10,17 @@
         <a  class="nav-link" [routerLink]="['/ListeVoiture']">Mes offres </a>
     
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="estUtilisatueur">
             <a  class="nav-link" [routerLink]="['/AjoutVoiture']"> Ajouter article</a>
-            
-        </li>
-        <li class="nav-item">
-            <a  class="nav-link" [routerLink]="['/Authentfier']"> Authentifier</a>
-            
-        </li>
+        
+     </li>
+     <li class="nav-item" *ngIf="!estUtilisatueur" >
+            <a  class="nav-link" [routerLink]="['/Authentfier']"> Authentifier</a>   
+     </li>
+     <li class="nav-item"  *ngIf="estUtilisatueur" >
+        <button class="btn btn-primary"(click)="onDeconnecter()" > <span class="spinner-grow spinner-grow-sm"></span>deconnecter</button>   
+     </li>
+
     
     </ul>
 </nav>    

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../fireBase/auth.service';
 
 @Component({
   selector: 'app-authentfier',
@@ -9,21 +10,27 @@ import { Router } from '@angular/router';
 })
 export class AuthentfierComponent implements OnInit {
  email;mtp;
- errors:boolean=true;
+ hiden:boolean;
  message:string;
- emailParDefaut="user@user.xx";
- motpassParDefaut="user000user";
 
-  constructor(private rt:Router) { }
+  constructor(private rt:Router,private serviceAuth:AuthService) { }
 
   ngOnInit() {
   }
- onSinscrire(f:NgForm){
-     this.errors=false;
-     if(f.value.email==this.emailParDefaut && f.value.mtp==this.motpassParDefaut){
+ onSeConnecter(f:NgForm){
+
+     this.serviceAuth.connecter(f.value.email,f.value.mtp)
+     .then(reslult =>{
       this.rt.navigate(['/Acceuil']);
-       }else{
-        this.message="votre authentification et passer avec des echec";
-     }
+      this.message="";               
+     })
+     .catch(err=>{
+       this.hiden= false;   
+      this.message="votre authentification et passer avec des echec";
+    })
+ }
+ hide(){
+ 
+   this.hiden=true;
  }
 }
