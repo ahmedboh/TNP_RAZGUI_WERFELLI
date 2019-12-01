@@ -27,7 +27,7 @@
             <div class="alert alert-danger" *ngIf="add.invalid && add.touched"> la sasie d'adresse est obligatoire </div><br>
             
             <button class="btn btn-primary" [disabled]="formulaire.invalid ||cmotpass.value != motpass.value">Créer un compte</button><br>
-            <div class="alert alert-danger" *ngIf="message"> {{message}} </div>
+            <div class="alert alert-danger float-right" *ngIf="message"> {{message}} </div>
 
         </form>
     </div>

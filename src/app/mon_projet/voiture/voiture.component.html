@@ -1,8 +1,9 @@
 
-    <img [src]="tab[pos].photo" width="1000px" height="300px"/>
-    <pre style="color:yellow ;font-size: 20px ;">
+    <img [src]="tab[pos].photo" class="rounded-circle" width="1000px" height="200px"/>
+    <pre style="font-size: 20px ;" class="text-warning">
     Nom de voiture : {{tab[pos].nom|uppercase}}
     Matricule de voiture : {{tab[pos].matricule}}
     Prix de voiture : {{tab[pos].prix|euro}}
+    <button class="btn btn-danger" style="position: absolute; top: 200px; right: 0px;" ><img src="../assets/del.png" width="30"height="30" /> </button>
     </pre>
-
+   
