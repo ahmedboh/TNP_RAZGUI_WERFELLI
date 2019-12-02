@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { VoitureService } from '../voiture.service';
+import { AuthService } from '../fireBase/auth.service';
 
 @Component({
   selector: 'app-voiture',
@@ -9,11 +10,19 @@ import { VoitureService } from '../voiture.service';
 export class VoitureComponent implements OnInit {
 @Input()pos:number;
   tab;
-  constructor(private service: VoitureService) { 
+  estUtilisatueur:boolean=false;
+  constructor(private servicev: VoitureService,private serviceAuth:AuthService) { 
   }
 
   ngOnInit() {
-    this.tab=this.service.voitures;
+    this.tab=this.servicev.voitures;
+    this.serviceAuth.utilisateur.subscribe(result =>{
+      this.estUtilisatueur=(result)?true:false;
+      })
+    
   }
 
+  onEffacer(){
+  this.servicev.effacer(this.pos);
+  }
 }

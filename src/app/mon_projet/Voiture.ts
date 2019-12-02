@@ -5,18 +5,18 @@ export class Voiture{
     private _nom : string;
     private _photo : string ; 
     private _prix : number ; 
-    private _disponibilité : boolean;
+    private _assure : boolean;
     private _dateS : Date;
     private _marque : string;
     private _symbole : string ;
     private _table : Caractéristique;
-    constructor(matricule : string , nom:string, photo:string, prix:number, disponibilité:boolean, dateS:Date, marque:string, symbole:string, table: Caractéristique)
+    constructor(matricule : string , nom:string, photo:string, prix:number, assure:boolean, dateS:Date, marque:string, symbole:string, table: Caractéristique)
     {
 this._matricule=matricule; 
 this._nom=nom ; 
 this._photo=photo;
 this._prix=prix;
-this._disponibilité=disponibilité;
+this._assure=assure;
 this._dateS=dateS;
 this._marque=marque;
 this._symbole=symbole;
@@ -35,8 +35,8 @@ public get photo():string
 public get prix():number
 { return this._prix;}
 
-public get disponibilité():boolean
-{ return this._disponibilité;}
+public get assure():boolean
+{ return this._assure;}
 
 public get dateS():Date
 { return this._dateS;}

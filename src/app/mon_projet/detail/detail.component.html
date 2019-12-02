@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<br>
+<div style="background:rgb(51, 48, 48);font-family: 'Times New Roman' ; font-size: large; font-weight: bold;">
+    <img [src]="vo.symbole"  style="right:0px; position:absolute"  width="150px" height="100px"/>
+    <div style="right:170px;top:150px; position:absolute" >
+        <h1>{{vo.marque|uppercase}}</h1>
+    </div>
+    <img [src]="vo.photo" class="rounded-circle" style="right:0px; top: 260px; position:absolute"  width="500px" height="280px"/>
+
+<ul class="list-group" style="width: 60%;">
+
+    <li class="list-group-item"><img src="../assets/nom.jpg  " width="30px" height="30px"/>:{{vo.nom}}</li>
+    <li class="list-group-item"><img src="../assets/matricule.png  " width="30px" height="30px"/>  :{{vo.matricule}}</li>
+    <li class="list-group-item"><img src="../assets/euro.png  " width="30px" height="30px"/>  :{{vo.prix}}</li>
+    <li class="list-group-item"><img src="../assets/date.png  " width="30px" height="30px"/>  :{{vo.dateS|date}}</li>
+    <li class="list-group-item"><img src="../assets/assur.png" width="30px" height="30px"/>
+        <span *ngIf="vo.assure; else non"class="text-success"><img src="../assets/oui.png" width="30"height="30" />OUI<img src="../assets/oui.png" width="30"height="30" /></span>
+        <ng-template #non>
+            <span class="text-danger"><img src="../assets/non.png" width="30"height="30" />NON<img src="../assets/non.png" width="30"height="30" /></span>
+        </ng-template> 
+    </li>
+    <li class="list-group-item"><img src="../assets/couleur.jpg" width="30px" height="30px"/>  :{{vo.table.couleur}}</li>
+    <li class="list-group-item"><img src="../assets/nbrp.png" width="30px" height="30px"/>  :{{vo.table.nbrPlace}}</li>
+    <li class="list-group-item"><img src="../assets/puissance.png" width="30px" height="30px"/>  :{{vo.table.puissance }}kw</li>
+    <button class="btn btn-danger" ><a [routerLink]="['/ListeVoiture']"><img src="../assets/back.png" class="float-left" width="40"height="40" /><h2>ROUTOURNER</h2></a></button>
+    
+</ul>
+
+</div>

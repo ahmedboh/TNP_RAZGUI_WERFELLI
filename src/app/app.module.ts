@@ -18,6 +18,9 @@ import { EuroPipe } from './mon_projet/euro.pipe';
 import { ErreurComponent } from './mon_projet/erreur/erreur.component';
 import { SinscrireComponent } from './mon_projet/sinscrire/sinscrire.component';
 import { from } from 'rxjs';
+import { DetailComponent } from './mon_projet/detail/detail.component';
+import { EditerComponent } from './mon_projet/editer/editer.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { from } from 'rxjs';
     MenuComponent,
     EuroPipe,
     ErreurComponent,
-    SinscrireComponent
+    SinscrireComponent,
+    DetailComponent,
+    EditerComponent
   ],
   imports: [
     BrowserModule,

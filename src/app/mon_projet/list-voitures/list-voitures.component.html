@@ -1,13 +1,11 @@
 
-<body class="text-warning">
+<body class="text-danger">
     <br><br><br>
     <h1 style="text-align: center;">{{titre|uppercase}}</h1>
     <br>
-   <table>
-
-   </table> 
-    <ul class="list-group rounded border border-warning"    style="position: absolute;left:100px;">
-        <li class="list-group-item rounded " style="background-color:#000108;"*ngFor="let t of tabvoitures ; let i=index">
+  
+    <ul class="list-group rounded border border-danger "    style="position: absolute;left:150px;">
+        <li class="list-group-item rounded " style="background-color:rgb(51, 48, 48);width: 1000px;height: 500px;"*ngFor="let t of tabvoitures ; let i=index">
     
             <app-voiture [pos]="i"></app-voiture>
         </li>

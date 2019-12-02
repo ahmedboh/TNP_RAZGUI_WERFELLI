@@ -1,7 +1,8 @@
 <div style="background:url('../assets/back2.jpg')no-repeat ;background-size:100%;height:700px;">
-    <div class="container" style="opacity: 0.8;">
-        <br><br><br>
-        <h2 class="text-center">S'inscrire</h2>
+    <br><br><br><br>
+    <div class="container" style="opacity: 0.7;border:3px solid #0058fc;background-color: gray;border-radius: 30px;">
+       
+        <h2 class="text-center">S'INSCRIRE</h2><br>
         <form #formulaire="ngForm" (ngSubmit)="onSinscrire(formulaire)" >
             <input name="nom" [(ngModel)]="nom" #name="ngModel" type="text" class="form-control" placeholder="Votre nom" required pattern="[A-Z][a-zA-Z]+" >
             <div class="alert alert-danger" *ngIf="name.errors?.required && name.touched"> La saisie du nom est obligatoire </div>
@@ -26,8 +27,8 @@
             <input name="adresse" #add="ngModel" [(ngModel)]="adresse" type="text" class="form-control" placeholder="Votre Adresse"required>
             <div class="alert alert-danger" *ngIf="add.invalid && add.touched"> la sasie d'adresse est obligatoire </div><br>
             
-            <button class="btn btn-primary" [disabled]="formulaire.invalid ||cmotpass.value != motpass.value">Créer un compte</button><br>
-            <div class="alert alert-danger float-right" *ngIf="message"> {{message}} </div>
+            <button class="btn btn-primary" [disabled]="formulaire.invalid ||cmotpass.value != motpass.value"><span class="spinner-grow spinner-grow-sm"></span>Créer un compte</button><br>
+            <div class="alert alert-danger float-right" *ngIf="message"> {{message}} </div><br>
 
         </form>
     </div>

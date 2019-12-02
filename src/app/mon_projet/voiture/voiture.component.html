@@ -1,9 +1,13 @@
 
-    <img [src]="tab[pos].photo" class="rounded-circle" width="1000px" height="200px"/>
-    <pre style="font-size: 20px ;" class="text-warning">
-    Nom de voiture : {{tab[pos].nom|uppercase}}
-    Matricule de voiture : {{tab[pos].matricule}}
-    Prix de voiture : {{tab[pos].prix|euro}}
-    <button class="btn btn-danger" style="position: absolute; top: 200px; right: 0px;" ><img src="../assets/del.png" width="30"height="30" /> </button>
+    <img [src]="tab[pos].photo" class=" mx-auto d-block" width="800px" height="300px"/>
+    <pre style="font-size: 28px ;font-family: 'Gill Sans';" class="text-primary">
+    Nom de voiture :                <span class="text-danger">{{tab[pos].nom|uppercase}}</span>
+    Matricule de voiture :         <span class="text-danger">{{tab[pos].matricule}}</span>
+    Prix de voiture :                 <span class="text-danger">{{tab[pos].prix|euro}}</span>
+
+    <button *ngIf="estUtilisatueur" class="btn btn-danger" style="position: absolute; top: 315px; right: 10px;width: 150px;" (click)="onEffacer()"><img src="../assets/del.png" class="float-left" width="25"height="25" /> SUPRIMER</button>
+    <a [routerLink]="['/ListeVoiture/detail/',tab[pos].matricule]"><button class="btn btn-info" style="position: absolute; top: 360px; right: 10px;width: 150px;" ><img src="../assets/det.png" class="float-left"  width="25"height="25" /> PLUS INFOS</button></a>
+    <a [routerLink]="['ListeVoiture/editer/',tab[pos].matricule]"><button *ngIf="estUtilisatueur" class="btn btn-success" style="position: absolute; top: 405px; right: 10px;width: 150px;" ><img src="../assets/mod.png"  class="float-left" width="25"height="25" /> EDITER</button></a>
+    
     </pre>
    
