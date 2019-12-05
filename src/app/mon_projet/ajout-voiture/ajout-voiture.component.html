@@ -1,1 +1,113 @@
-<p>ajout-voiture works!</p>
+<br><br><br>
+
+
+<div [ngClass]="(assure=='true')?'c1':'c2'">        
+        <h1 class="text-center">AJOUTATION D'UN NOUVELLE VOITURE</h1><br><br>
+        <form (ngSubmit)="onAjouter()" #frm="ngForm" >
+                <div class="form-group">
+                        <label for="matricule">
+                        Matricule de voiture:
+                        </label>
+                        <input name="matricule" #mat="ngModel"   id="matricule" [(ngModel)]="matricule"  type="text"   class="form-control" placeholder="matricule "required  >
+                        <div class="alert alert-danger"  *ngIf="mat.errors?.required && mat.touched"> La saisie du matricule est obligatoire </div>
+                        <div class="alert alert-danger"  *ngIf="test(mat.value) && mat.touched">cette matricule est utilisable par une autre voiture </div>
+                </div>
+                <div class="form-group">
+                        <label for="nom">
+                        Nom de  voiture:
+                        </label>
+                        <input name="nom" id="nom"   [(ngModel)]="nom"   type="text" #name="ngModel"  class="form-control" placeholder="nom"   required >  
+                        <div class="alert alert-danger"  *ngIf="name.errors?.required && name.touched"> La saisie du nom  est obligatoire </div>
+
+                </div>
+                <div class="form-group">
+                                <label for="marque">
+                                Marque de voiture:
+                                </label>
+                                <input name="marque" id="marque"  [(ngModel)]="marque"  #marq="ngModel"      type="text"   class="form-control" placeholder="marque "required >
+                                <div class="alert alert-danger"  *ngIf="marq.errors?.required && marq.touched"> La saisie de la marque  est obligatoire </div>
+                                 
+                 </div>
+                <div class="form-group">
+                                <label for="prix">
+                                Prix de voiture:
+                                </label>
+                                <input name="prix" id="prix"    [(ngModel)]="prix"   #lprix="ngModel"         type="number" class="form-control" placeholder="prix "required min="0" >
+                                <div class="alert alert-danger"  *ngIf="lprix.errors?.required && lprix.touched"> La saisie du prix  est obligatoire </div>
+                                <div class="alert alert-danger"  *ngIf="lprix.value<0 && lprix.touched"> le prix doit être positive </div>
+                                 
+                </div>        
+                <div class="form-group">
+                                <label for="date">
+                                La date de sorite de   voiture:
+                                </label>
+                                <input name="dateS" id="date"  [(ngModel)]="dateS"   type="date" #dte="ngModel"  class="form-control" placeholder=" date de sortie" required >
+                                <div class="alert alert-danger"  *ngIf="dte.errors?.required && dte.touched"> La saisie de la date de sortie  est obligatoire </div>
+                                
+                 </div>
+                 
+                 <div class="form-group">
+                                <label for="nombrep">
+                                Nombre de places de voiture:
+                                </label>
+                                <input name="nbrPlace" id="nombreP" [(ngModel)]="nbrPlace"  #nbrp="ngModel"  type="number" class="form-control" placeholder=" nombre de place disponible"required min="0" >
+                                <div class="alert alert-danger"  *ngIf="nbrp.errors?.required && nbrp.touched"> La saisie  de la nombre de places dans la voiture  est obligatoire </div>
+                                <div class="alert alert-danger"  *ngIf="nbrp.value<0 && nbrp.touched"> la nombre de places doit être positive </div>
+                                 
+                 </div>
+                 
+                 <div class="form-group">
+                                <label for="puissance">
+                                Puissance de moteur de voiture:
+                                </label>
+                                <input name="pui" id="puissance"   [(ngModel)]="puissance"    #puiss="ngModel"      type="number"   class="form-control" placeholder="puissance de moteur" required min="0">
+                                <div class="alert alert-danger"  *ngIf="puiss.errors?.required && puiss.touched"> La saisie de la puissance de moteur  est obligatoire </div>
+                                <div class="alert alert-danger"  *ngIf="puiss.value<0 && puiss.touched"> la puissance de moteur doit être positive </div>
+                                 
+                        </div>
+                 <div class="form-group">
+                                <label for="couleur">
+                                Couleur de voiture:
+                                </label>
+                                <input name="color"  id="couleur"  [(ngModel)]="color"     #couleur="ngModel"     type="text"   class="form-control" placeholder=" couleur" required >
+                                <div class="alert alert-danger"  *ngIf="couleur.errors?.required && couleur.touched"> La saisie du couleur est obligatoire </div>
+                 </div>
+                 <div>
+                 <table class="table">
+                        <tr>
+                                <td>       
+                                         <label for="photo">
+                                            Photo de voiture:
+                                         </label>
+                                </td>
+                                <td>
+                                        <label for="symbole">
+                                                Symbole de voiture:
+                                        </label>
+                                </td>
+                        </tr>
+                         <tr>   
+                                 <td>  
+                                           <input name="photo"  id="photo"  [(ngModel)]="photo"          type="file"   class="form-control-file border"  required >
+                                 </td>
+                                 <td>
+                                           <input name="symbole" id="symbole" [(ngModel)]="symbole"      type="file"  class="form-control-file border" required >
+                                 </td>
+                         </tr>
+                 </table> 
+                 </div>
+                 <div class="form-group">
+                                <label for="assurance">
+                                Voiture est sous asurance :
+                                </label>
+                                <pre>
+                                              <input name="assure" class="form-check-input" [(ngModel)]="assure" value="true"  type="radio"  ><span style="color: rgb(10, 87, 240);font-size: large;r">Oui</span>      <input name="assure" id="assurance"   class="form-check-input" [(ngModel)]="assure" value="false"  type="radio"   ><span style="color: red;font-size: large;">Nom</span> 
+                                </pre>
+                 </div>  
+                <button [ngClass]="(assure=='true')?'btn btn-primary btn-block':'btn btn-danger btn-block'" ><img src="../assets/add.png" class="float-left" width="70"height="30" />AJOUTER UN VOITURE<img src="../assets/add.png" class="float-right" width="70"height="30" /></button>
+            <br>
+            <br>
+            </form>
+    </div>
+ 
+    

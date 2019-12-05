@@ -18,7 +18,7 @@ const routes: Routes = [
   {path : 'Sinscrire', component: SinscrireComponent},
   {path : 'ListeVoiture/detail/:matricule', component:  DetailComponent},
   {path : 'ListeVoiture/editer/:matricule', component: EditerComponent},
-  {path : '', redirectTo:'Authentfier' , pathMatch:'full'},
+  {path : '', redirectTo:'Acceuil' , pathMatch:'full'},
   {path : '**', component:ErreurComponent}
   ];
   

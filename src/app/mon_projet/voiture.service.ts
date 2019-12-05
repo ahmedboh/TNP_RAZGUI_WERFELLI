@@ -15,5 +15,18 @@ export class VoitureService {
   effacer(x:number){
       this.voitures.splice(x,1);
       }
+  ajouter(a:string,b:string,c:string,d:number,e:boolean,f:Date,g:string,o:string,h:string,i:number,k:number ){
+    this.voitures.push(new Voiture(a,b,c,d,e,f,g,o,new Caractéristique(h,i,k)));
+  }
+  rech(x:string):boolean{
+    for(let v of this.voitures){
+      if(x==v.matricule){
+      return true;
+      break;
+      }
+    }
+    return false;
+
+  }
   constructor() { }
 }
