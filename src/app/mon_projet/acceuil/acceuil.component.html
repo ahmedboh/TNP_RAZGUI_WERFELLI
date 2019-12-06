@@ -1,4 +1,34 @@
 <div  style="background:url('../assets/cars.jpg')no-repeat ;background-size:100%; width:1350px; height:700px;">
-    <br> <br><br><br><h1 style="color: rgb(236, 229, 229);  text-align: center; font-size:60px;"> BIENVENU DANS NOTRE AGENCE </h1>
+    <br> <br><br>
+    <h1 style="color: rgb(236, 229, 229);  text-align: center; font-size:60px;"> 
+        <pre style="color: rgb(236, 229, 229);font-size:60px;"><span>BIENVENU</span><span> DANS</span><span> NOTRE </span></pre>
+<span style="position: relative;left: 600px;font-size:60px;font-weight: bold;"><p ><span>A</span><span>U</span><span>T</span><span>O</span></p></span></h1><br>
+
+
+<div class="body" style="opacity: 0.9;position: relative;left:20px;width: 1300px;border:3px solid #0058fc;background-color: gray;border-radius: 30px;" *ngIf="commandes.length>1">
+        <ins style="color: red;"><h2 class="text-center"  >Votre commande : </h2></ins><br>
+    <div class="row" >
+    <ng-container *ngFor="let c of commandes">   
+    <div class="col col-12 col-md-6 col-lg-3" *ngIf="c.prix !=0" >
+        <div class="card Dark card" style="border :3px solid gold ;border-radius: 15px;" >
+            <img [src]="c.photo" class="card-img-top" width="170" height="170">
+            <div clas="card-body">
+                <h5 class="card-title text-center" >{{c.nom|titlecase}}</h5>
+                <p class="card-text">{{c.matricule}}</p>
+                <p class="card-text">{{c.prix |euro}}</p>
+                <a [routerLink]="['/ListeVoiture/detail/',c.matricule]"><button class="btn btn-info " style="position: relative;left: 80px;">PLUS DETAILS</button></a>
+            </div>
+        </div>
+    </div>
+    </ng-container>
+</div><br>
+<div class="form-group">
+        <button class="btn btn-dark " (click)="onCalcul()">PRIX DE COMMANDE</button>
+        <input type="number" class="form-control" placeholder="sans reduction" style="width:300px ;position: absolute ;left: 200px;" [(ngModel)]="val" disabled />
+        <input type="text" class="form-control" placeholder="la valeur de reduction" style="width:200px ;position: absolute ;left: 600px;" [(ngModel)]="val1" disabled />
+        <input type="number" class="form-control" placeholder="avec reduction" style="width:300px; position: absolute ;left: 900px" [(ngModel)]="val2" disabled/>
+    </div>
+    <br>
+    <br>
 
 </div>

@@ -7,7 +7,7 @@ import { VoitureService } from '../voiture.service';
   styleUrls: ['./list-voitures.component.css']
 })
 export class ListVoituresComponent implements OnInit {
-  titre:string="voici mes derniere offres";
+  titre:string=" voici notre inventaire Auto";
   tabvoitures;
   val:string;
   val2:number;

@@ -10,7 +10,7 @@ export class VoitureService {
     new Voiture( 'audi-2003', 'audi A1', '../assets/cars/audi.png',20970, true,new Date(2010,9,9),'audi','../assets/logo/audilogo.png',new Caractéristique('rouge',5,188)),
     new Voiture( 'bmw-1890', 'bmw x3', '../assets/cars/bmw.png',50000, false,new Date(2017,6,26),'bmw','../assets/logo/bmwlogo.png',new Caractéristique('noire',5,195)),
     new Voiture( 'polo-0078', 'polo 7', '../assets/cars/polo7.png',12980, true,new Date(2019,1,5),'volkswagen','../assets/logo/volkswagenlogo.png',new Caractéristique('marron',5,110)),
-    new Voiture( 'mercedes-9550', 'mercedes benz gle 43 amg 2018', '../assets/cars/mercedes.png',87520, false,new Date(2018,6,18),'mercedes benz','../assets/logo/mercedeslogo.png',new Caractéristique('blanc',5,287))
+    new Voiture( 'mercedes-9550', 'mercedes benz gle 43 amg ', '../assets/cars/mercedes.png',87520, false,new Date(2018,6,18),'mercedes benz','../assets/logo/mercedeslogo.png',new Caractéristique('blanc',5,287))
   ];
   effacer(x:number){
       this.voitures.splice(x,1);
