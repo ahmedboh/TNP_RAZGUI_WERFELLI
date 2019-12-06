@@ -51,4 +51,32 @@ public get symbole():string
 public get table():Caractéristique
 { return this._table;}
 
+
+public set matricule(x:string){
+    this._matricule=x;
+}
+public set nom(x:string){
+    this._nom=x;
+}
+public set prix(x:number){
+    this._prix=x;
+}
+public set dateS(x:Date){
+    this._dateS=x;
+}
+public set photo(x:string){
+    this._photo=x;
+}
+public set symbole(x:string){
+    this._symbole=x;
+}
+public set assure(x:boolean){
+    this._assure=x;
+}
+public set marque(x:string){
+    this._marque=x;
+}
+public set table(x:Caractéristique){
+    this._table=x;
+}
 }

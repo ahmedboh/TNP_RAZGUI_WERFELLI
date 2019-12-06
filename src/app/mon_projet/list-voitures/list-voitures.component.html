@@ -3,9 +3,15 @@
     <br><br><br>
     <h1 style="text-align: center;">{{titre|uppercase}}</h1>
     <br>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="rechercher avec nom" style="width:300px ;position: absolute ;left: 200px;" [(ngModel)]="val"/>
+        <input type="number" class="form-control" placeholder="rechercher avec prix" style="width:300px; position: absolute ;left: 800px" [(ngModel)]="val2"/>
+    </div>
+    
+    <br><br><br>
   
     <ul class="list-group rounded border border-danger "    style="position: absolute;left:150px;">
-        <li class="list-group-item rounded " style="background-color:rgb(51, 48, 48);width: 1000px;height: 500px;"*ngFor="let t of tabvoitures ; let i=index">
+        <li class="list-group-item rounded " style="background-color:rgb(51, 48, 48);width: 1000px;height: 500px;"*ngFor="let t of tabvoitures |recherchevoiture1:val|recherchevoiture2:val2; let i=index">
     
             <app-voiture [pos]="i"></app-voiture>
         </li>

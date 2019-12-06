@@ -9,6 +9,8 @@ import { VoitureService } from '../voiture.service';
 export class ListVoituresComponent implements OnInit {
   titre:string="voici mes derniere offres";
   tabvoitures;
+  val:string;
+  val2:number;
   constructor(private service :VoitureService) { }
 
   ngOnInit() {

@@ -20,6 +20,8 @@ import { SinscrireComponent } from './mon_projet/sinscrire/sinscrire.component';
 import { from } from 'rxjs';
 import { DetailComponent } from './mon_projet/detail/detail.component';
 import { EditerComponent } from './mon_projet/editer/editer.component';
+import { Recherchevoiture1Pipe } from './mon_projet/recherche/recherchevoiture1.pipe';
+import { Recherchevoiture2Pipe } from './mon_projet/recherche/recherchevoiture2.pipe';
 
 
 @NgModule({
@@ -35,7 +37,9 @@ import { EditerComponent } from './mon_projet/editer/editer.component';
     ErreurComponent,
     SinscrireComponent,
     DetailComponent,
-    EditerComponent
+    EditerComponent,
+    Recherchevoiture1Pipe,
+    Recherchevoiture2Pipe
   ],
   imports: [
     BrowserModule,

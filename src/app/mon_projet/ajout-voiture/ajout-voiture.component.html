@@ -1,9 +1,10 @@
-<br><br><br>
 
 
+<div  style="background:url('../assets/car4.jpg');background-size:110%; width:1350px; height:1400px;">
+        <br><br><br>        
 <div [ngClass]="(assure=='true')?'c1':'c2'">        
         <h1 class="text-center">AJOUTATION D'UN NOUVELLE VOITURE</h1><br><br>
-        <form (ngSubmit)="onAjouter()" #frm="ngForm" >
+        <form (ngSubmit)="onAjouter(frm)" #frm="ngForm" >
                 <div class="form-group">
                         <label for="matricule">
                         Matricule de voiture:
@@ -101,7 +102,7 @@
                                 Voiture est sous asurance :
                                 </label>
                                 <pre>
-                                              <input name="assure" class="form-check-input" [(ngModel)]="assure" value="true"  type="radio"  ><span style="color: rgb(10, 87, 240);font-size: large;r">Oui</span>      <input name="assure" id="assurance"   class="form-check-input" [(ngModel)]="assure" value="false"  type="radio"   ><span style="color: red;font-size: large;">Nom</span> 
+                                              <input name="assure" class="form-check-input" [(ngModel)]="assure" value="true"  type="radio"  ><span style="color: rgb(10, 87, 240);font-size: large;">Oui</span>      <input name="assure"   class="form-check-input" [(ngModel)]="assure" value="false"  type="radio"   ><span style="color: red ; font-size: large;">Nom</span> 
                                 </pre>
                  </div>  
                 <button [ngClass]="(assure=='true')?'btn btn-primary btn-block':'btn btn-danger btn-block'" ><img src="../assets/add.png" class="float-left" width="70"height="30" />AJOUTER UN VOITURE<img src="../assets/add.png" class="float-right" width="70"height="30" /></button>
@@ -109,5 +110,5 @@
             <br>
             </form>
     </div>
- 
+ </div>
     

@@ -21,5 +21,13 @@ export class Caractéristique{
      {
          return this._puissance;
      }
-
+     public set couleur(x:string){
+        this._couleur=x;
+    }
+    public set nbrPlace(x:number){
+        this._nbrPlace=x;
+    }
+    public set puissance(x:number){
+        this._puissance=x;
+    }
 }

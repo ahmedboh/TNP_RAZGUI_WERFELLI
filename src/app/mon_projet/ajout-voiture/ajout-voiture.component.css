@@ -7,6 +7,7 @@
      border-radius: 30px;
      font-size: 18px;
      font-family: fantasy;
+     opacity: 0.8;
 }
 .c2{
     position: absolute;
@@ -18,4 +19,5 @@
      border-radius: 30px;
      font-size: 18px;
      font-family: fantasy;
+     opacity: 0.7;
 }
